@@ -2,7 +2,7 @@
 This is a stonescript language support extension. Created to make it easier to write scripts for the Stone Story RPG game. 
 
 ## Features
-+ Semantic highlighting
++ Syntax highlighting
 + Docstrings on hover
 + Code completion
 + Parameter suggestions
