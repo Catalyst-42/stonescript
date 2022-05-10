@@ -1,0 +1,269 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Stonescript",
+  "scopeName": "source.txt",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#sounds"},
+    { "include": "#variables" },
+    { "include": "#functions" },
+    { "include": "#keywords" },
+    { "include": "#operators" },
+    { "include": "#control" },
+    { "include": "#classes" },
+    { "include": "#links" },
+    { "include": "#colors" },
+    { "include": "#constants" },
+    { "include": "#ascii" }
+  ],
+  "repository": {
+    "links":{
+      "name": "variable.stonescript",
+      "begin": "(@)",
+      "beginCaptures": { "1": { "name": "keyword.control.stonescript" } },
+      "end": "(@)",
+      "endCaptures": { "1": { "name": "keyword.control.stonescript" } },
+      "patterns": [
+        { "include": "#comments" },
+        { "include": "#strings" },
+        { "include": "#sounds"},
+        { "include": "#variables" },
+        { "include": "#functions" },
+        { "include": "#keywords" },
+        { "include": "#operators" },
+        { "include": "#control" },
+        { "include": "#classes" },
+        { "include": "#links" },
+        { "include": "#colors" },
+        { "include": "#constants" },
+        { "include": "#ascii" }
+      ]
+    },
+    "ascii": {
+      "begin": "\\b(ascii)\\b",
+      "beginCaptures": { "1": { "name": "keyword.control.stonescript" } },
+      "end": "\\b(asciiend)\\b",
+      "endCaptures": { "1": { "name": "keyword.control.stonescript" } },
+      "patterns": [
+        { "include": "#links" },
+        { "match": "(@.+?@)|(.+?)", 
+          "captures": {
+            "2": {"name": "string.other.stonescript"}
+          }
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.stonescript",
+          "begin": "//",
+          "end": "\n"
+        },
+        {
+          "name": "comment.block.stonescript",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "match": "this",
+          "name": "variable.language.this.stonescript"
+        },
+        {
+          "match": "(?<!\\.)\\.\\.(?!\\.)",
+          "name": "constant.character.for-generator.stonescript"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "match": "(\\&|\\||\\>|\\<|\\>=|\\<=|\\=|\\(|\\)|,|\\+|\\-)",
+          "name": "keyword.operator.stonescript"
+        },
+        {
+          "match": "\\b((?<=\\w)\\s?(\\+\\+|--|\\*\\*))",
+          "name": "keyword.operator.stonescript"
+        },
+        {
+          "match": "([\\x{0021}\\x{003d}\\+\\-\\*\\+\\x{0025}\\x{002f}\\[\\]\\{\\}\\(\\)\\x{002c}\\.\\|\\x{0026}\\x{003e}\\x{003c}])",
+          "name": "keyword.operator.stonescript"
+        }
+      ]
+    },
+    "sounds": {
+      "patterns": [
+        {
+          "match": "(?<=^ *play *)\\b(buy|click|confirm|soul_stone|sword_cast|sword_hit|wand_cast|wand_hit|player_kick|player_punch|stone_throw_cast|stone_throw_hit|grappling_cast|grappling_hit|grappling_idle|hatchet_cast|hatchet_hit|shovel_cast|torch_cast|torch_hit|torch_idle|pickup_stone|pickup_wood|pickup_tar|pickup_success|soul_stone_drop|wand_drop|key_drop|cross_deadwood_bump|cross_deadwood_row|cross_deadwood_splash|ui_starfirst|ui_starnew|ui_starold1|ui_starold2|ui_starold3|ui_starold4|bronze_gate_open|prompt_choice|waterfall_hook_hit|waterfall_splash|haunted_gate_key_bounce_1|haunted_gate_key_bounce_2|haunted_gate_key_bounce_3|haunted_gate_opening|haunted_gate_point_lost|haunted_gate_key_into_gate|haunted_gate_shuffle|haunted_gate_shuffle_fast|haunted_gate_torch_off|haunted_gate_torch_on|haunted_gate_try_to_open|paint_splat|waterfall_land|waterfall_rope_grab|waterfall_rope_swing|skeleton_boss_death|skeleton_boss_legs_die|spider_boss_death|tree_boss_death|mushroom_boss_death|tree_boss_attack|tree_boss_awake|tree_boss_idle|tree_boss_spike|spider_boss_attack|player_hit|mushroom_boss_awake|mushroom_boss_punch|mushroom_boss_shoot|skeleton_boss_arm1|skeleton_boss_arm2|skeleton_boss_attack|skeleton_boss_idle|skeleton_boss_bone_bounce|skeleton_boss_arm_woosh|equip|unequip|bat_attack_small|bat_death_small|bat_wing|bat_wing_small|spider_attack|spider_death|spider_death_small|spider_eggs_spawn|spider_walk|scarab_awake|scarab_bite|scarab_death|scarab_horn|scarab_wings|mosquito_attack|mosquito_death|mosquito_loop|bronze_gate_locked|bat_attack|bat_death|progress_1|progress_2|progress_3|progress_4|progress_5|progress_6|progress_7|progress_8|progress_9|life_gain|player_death|logo_full|logo_short|smithy_hammer|sightstone_cast|error|ranting_tree_halt|treasure_close|treasure_item_pop|treasure_item_show|treasure_open|skeleton_boss_awake|skeleton_boss_hand_slam|level_up|insta_kill|spider_boss_awake|metal_drop|treasure_drop|smithy_hammer_fail|xp_tick|crossbow_cast|crossbow_hit|wand_aether_cast|wand_aether_hit|wand_air_cast|wand_air_hit|wand_fire_cast|wand_fire_hit|wand_ice_cast|wand_ice_hit|wand_poison_cast|wand_poison_hit|wand_vigor_cast|wand_vigor_hit|skeleton_boss_arm_reconnect|skeleton_boss_summon_minions|mushroom_boss_fat_slam|pickup_bronze|temple_npc_chant|temple_npc_clear_throat|temple_npc_talk|first_controller|slave_npc|slave_outro_chatter|slave_outro_voice|haunted_gate_npc_voice|slave_outro_transition|bronze_guardian_attack1|bronze_guardian_attack2|bronze_guardian_attack3|bronze_guardian_death|bronze_guardian_helmet|bronze_guardian_power_up|bronze_guardian_steps|ant_attack|ant_death|ant_walk|snail_attack|snail_attack_small|snail_death|snail_death_small|snail_walk|ghost_death|ghost_death_small|skeletimmy_death|skeletony_death|skeletimmy_attack|skeletony_attack|skeletony_awake_a|skeletony_awake_b|skeletony_walk|ghost_loop|ghost_loop_small|ghost_attack|ghost_attack_small|controller_death|controller_whip_attack|controller_whip_hit|dominotaur_death|dominotaur_whip_attack|dominotaur_whip_hit|mine_walker_death|mine_walker_attack_a|mine_walker_attack_b|mine_walker_attack_hit|mine_walker_awake|mine_walker_step|fire_elemental_attack|fire_elemental_attack_hit|fire_elemental_awake|fire_elemental_death|mine_walker_helmet_break|ice_elemental_attack|ice_elemental_attack_hit|ice_elemental_awake|ice_elemental_death|ki_eater_attack|ki_eater_attack_hit|ki_eater_awake|ki_eater_death|ki_gobbler_attack|ki_gobbler_attack_hit|ki_gobbler_awake|ki_gobbler_death|ki_slerper_attack|ki_slerper_attack_hit|ki_slerper_awake|ki_slerper_death|bell_ringer_attack|bell_ringer_attack_hit|cult_guard_attack|cult_guard_attack_hit|cult_marksman_attack|cult_marksman_attack_hit|cult_sorcerer_attack|cult_sorcerer_attack_hit|cultist_death|flying_serpent_loop|poison_adept_attack|poison_adept_attack_hit|serpent_attack|serpent_death|serpent_handler_release|serpent_hiss|serpent_slither|worm_rider_hop|booklet_open|booklet_turn_page|booklet_close|hammer_cast|hammer_hit|shield_dash|fissure_break_apart|fissure_unmake|mindstone_off|mindstone_on|triskelion_fuse|potion_berserk|potion_cleansing|potion_defensive|potion_experience|potion_healing|potion_invisibility|potion_lightning|potion_lucky|potion_strength|potion_vampiric|bronze_guardian_pulling_hammer|bronze_guardian_removing_hammer|bronze_guardian_turbine|bronze_guardian_ears_ring|bronze_guardian_fuse|bronze_guardian_attack4|yeti_attack|yeti_attack_flick|yeti_attack_hit|yeti_awake_blow|yeti_awake_explosion|yeti_awake_inhale|yeti_awake_lick|yeti_blow|yeti_blow_ice_wall|yeti_death|yeti_inhale|yeti_inhale_lick|nagaraja_awake_roar|nagaraja_awake_swallow|nagaraja_awake_tongue_1|nagaraja_awake_tongue_2|nagaraja_dead|nagaraja_poison_attack|nagaraja_poison_attack_hit|nagaraja_wail|nagaraja_wail_brick|nagaraja_attack_eat|nagaraja_attack_lick|nagaraja_attack_swallow|nagaraja_tongue_damaged|nagaraja_tongue_lift|nagaraja_tongue_smell|nagaraja_tongue_wrap|bearer3_talk|bearer_attack|bearer_attack_hit|bearer_death|bearer_stealing|bearer_super_attack|bearer_scream|bearer4_talk|bearer4_talk_evolving|bearer_evolving|elementalist_aether_attack|elementalist_aether_attack_hit|elementalist_aether_blink|elementalist_death|elementalist_fire_attack|elementalist_fire_attack_hit|elementalist_fire_blink|elementalist_ice_attack|elementalist_ice_attack_hit|elementalist_ice_blink|elementalist_poison_attack|elementalist_poison_attack_hit|elementalist_poison_blink|elementalist_vigor_attack|elementalist_vigor_attack_hit|elementalist_vigor_blink|bearer5_talk|elementalist_evolving|perfected_attack|perfected_attack_hit|perfected_death|perfected_defense|perfected_energy_ball|perfected_energy_ball_hit|perfected_summon|perfected_talk|epilogue_devolving|epliogue_player_evolves|epilogue_talk|devolved_talk|dysangelos_guidance|dysangelos_guidance_1|dysangelos_guidance_2|dysangelos_guidance_3|dysangelos_intro_talk|ranting_tree_talk_halt|ranting_tree_talk_again|ranting_tree_talk_how_dare|ranting_tree_talk_avenge|ranting_tree_talk_get_out|ranting_tree_talk_impressive|ranting_tree_talk_very_well|ranting_tree_talk_extra|hans_talk_intro|hans_talk_reward|scotty_a_pleasure|scotty_a_worthy_opponent|scotty_deuced|scotty_failte_back|scotty_getting_good|scotty_grr|scotty_guess_which|scotty_intro|scotty_lets_harden|scotty_make_ye_guess|scotty_noo_jist|scotty_perhaps_the_rules|scotty_pick_some_treasure|scotty_shall_we_up|scotty_we_have_wee_use|scotty_well_met|scotty_well_then|scotty_wizard|scotty_wrong_choice|scotty_hell_be_back|scotty_out_of_treasure|scotty_there_he_is|nagaraja_choir|mushroom_boss_split|ant_hill|treasure_drop_common|treasure_drop_epic|treasure_drop_giant|treasure_drop_humble|treasure_drop_rare|dominotaur_awake|fire_geyser|ice_pillar|treasure_item_cyan|treasure_item_yellow|treasure_item_green|treasure_item_blue|treasure_item_red|treasure_item_rainbow|ki_slerper_walk|mindstone_found|ghost_tomb_death|perfected_fly_start|perfected_fly_loop|perfected_fly_end|shop_door_open|shop_door_enter|scorpion_death|bomb_cart_explosion|bomb_cart_fuse|bomb_cart_move|bronze_gate_close|poison_powerup|acronian_cultist_power_up|giant_ice_elemental_attack|scout_dialog|morel_punch|falling_stonefolk|scout_arrives|scout_leaves|scout_wing|scout_focus|dog_bark|frog|lost_item_boost|treasure_item_lost|blade_glow|blade_pallas_attack|blade_raise|blade_drag|auggie_voice|pallas_voice|quest_stone_jump|quest_stone_unlock|bardiche_cast|boo_voice|quarterstaff_cast|air_hiss|bang_go_forward|fire_orbs|open_note|talisman_reveal|fire_beast_1|fire_beast_2|uulaa_voice|mask_summon_1|mask_summon_2)\\b",
+          "name": "keyword.operator.sound-effect.stonescript"
+        }
+      ]
+    },
+    "control": {
+      "patterns": [
+        {
+          "match": "(\\?|:\\?|:)",
+          "name": "keyword.control.stonescript"
+        },
+        {
+          "match": "\\^",
+          "name": "keyword.control.stonescript"
+        },
+        {
+          "match": "\\b(poison|vigor|aether|fire|air|ice|long|sword|compound|dashing|bashing|shield|wand|bardiche|heavy|repeating|crossbow|hammer|(quarter|socketed )?staff|skeleton arm|blade|mask|mind|(?<!res.)(stone|wood|tar|bronze|ki)|(?<!item.)potion|empty|stones|hatchet|shovel|grappling hook|mind|stones|hatchet|shovel|grappling|moon|mind|triskelion|fissure|quest|ouroboros|xp|xi|star|sight|runestone)\\b",
+          "name": "keyword.operator.weapon-filter.stonescript"
+        },
+        {
+          "match": "\\b(arachnid|serpent|insect|machine|humanoid|elemental|boss|phase1|phase2|phase3|spawner|flying|slow|ranged|explode|swarm|unpushable|undamageable|magic_resist|magic_vulnerability|immune_to_stun|immune_to_ranged|immune_to_debuff_damage|immune_to_physical)\\b",
+          "name": "keyword.operator.enemy-filter.stonescript"
+        },
+        {
+          "match": "\\b(Rocky|Deadwood|Caves|Waterfall|Mushroom|Halls|Mine|Ridge|Temple|Shop|Gate)\\b",
+          "name": "keyword.operator.location.stonescript"
+        },
+        {
+          "match": "\\b(buff_protection|protection|stun|debuff_dot|dot|debuff_dot_2|debuff_damage|damage|debuff_chill|chill|bardiche|smite|berserk|lucky_crit|crit|lucky_mult|multi|strength|invisibility|vampiric|experience)\\b",
+          "name": "keyword.operator.effect-filter.stonescript"
+        },
+        {
+          "match": "\\b((?<!\\.)left|(?<!\\.)right|(?<!\\.)up|(?<!\\.)down|primary|back|ability1|ability2|bumpL|bumpR|leftBegin|rightBegin|upBegin|downBegin|primaryBegin|backBegin|ability1Begin|ability2Begin|bumpLBegin|bumpRBegin|leftEnd|rightEnd|upEnd|downEnd|primaryEnd|backEnd|ability1End|ability2End|bumpLEnd|bumpREnd|←|→|↑|↓|A|D|W|S|LMB|Return|X|Shift|Control|Z|C)\\b",
+          "name": "keyword.operator.input-filter.stonescript"
+        },
+        {
+          "match": "\\b(target|waypoint|mosquito|acronian_scout|Dysangelos|dysangelos|dysangelos_bearer|dysangelos_elementalist|dysangelos_perfected|scarab|flesh_scarab|huge_mosquito|wasp|wasp_nest|Xyloalgia|tree_boss|Poena|poena|tiny_spider|small_spider|spider_eggs|small_bat|medium_bat|scorpion|cool_bat|Bolesh|spider_boss|ant|ant_hill|epic_snail|colossal_snail|fluff|mushroom_boss|mushroom_boss_fat|mushroom_boss_skinny|ghost|large_ghost|ghost_tomb|small_skeleton|large_skeleton|ghost_tomb|Pallas|pallas|skeleton_boss|skeleton_boss_stage_2|mine_walker|fire_elemental|flame_geyser|slave_master|big_slave_master|bomb_cart|bronze_guardian|elite|ice_elemental_elite|pillar|ice_pillar|ki_eater|ki_slerper|ki_globbler|ice_elemental_elite|Hrimnir|yeti|slying_serpent|ground_serpent|worm_rider|cult_guard|cult_sorcerer|cult_marksman|heavy_hitter|poison_adept|acronian_cultist|nagaraja|Nagaraja)\\b",
+          "name": "keyword.operator.foe.stonescript"
+        },
+        {
+          "match": "\\b(bronze_guardian_3|bronze_guardian_4|bronze_guardian_5|bronze_guardian_cyan|bronze_mine_0|bronze_mine_1|bronze_mine_2|bronze_mine_3|bronze_mine_4|bronze_mine_5|bronze_mine_cyan|slave_outro_climb|slave_outro_loop|caustic_caves|spider_boss|cross_deadwood_river|cross_deadwood_wind|deadwood_0|deadwood_1|deadwood_2|deadwood_3|deadwood_4|deadwood_5|deadwood_cyan|tree_boss|waterfall_descent|skeleton_boss|undead_crypt_0|undead_crypt_1|undead_crypt_2|undead_crypt_3|undead_crypt_4|undead_crypt_5|undead_crypt_cyan|undead_crypt_intro|bridge_broken|bridge_crossing|icy_ridge_0|icy_ridge_1|icy_ridge_2|icy_ridge_3|icy_ridge_4|icy_ridge_5|icy_ridge_cyan|yeti|fire_loop|fungus_forest_0|fungus_forest_1|fungus_forest_2|fungus_forest_3|fungus_forest_4|fungus_forest_5|fungus_forest_cyan|mushroom_boss|mushroom_boss_cyan|shop|rocky_plateau_0|rocky_plateau_1|rocky_plateau_2|rocky_plateau_3|rocky_plateau_4|rocky_plateau_5|rocky_plateau_epilogue|rocky_plateau_fight|rocky_plateau_talk|nagaraja|temple_0|temple_1|temple_2|temple_3|temple_4|temple_5|temple_cyan|event_fall|event_hamartia|event_spring|event_stonejam|event_summer|event_winter|credits|main_menu|bone_factory|osteophone|uulaa)\\b",
+          "name": "keyword.operator.music.stonescript"
+        },
+        {
+          "match": "\\b(ambient_mines|ambient_caves|ambient_bronze_gate|ambient_deadwood|ambient_mushroom|ambient_bridge|ambient_icy|ambient_cave|ambient_rocky|ambient_temple|ambient_crypt|ambient_haunted_gate|ambient_pallas|waterfall_a|waterfall_b|waterfall_c)\\b",
+          "name": "keyword.operator.ambient.stonescript"
+        },
+        {
+          "match": "(?<== *)\\b(inherit|left|right|top|center|bottom)\\b",
+          "name": "keyword.operator.position.stonescript"
+        },
+        {
+          "match": "\\b(top_left|top_center|top_right|center_left|center_center|center_right|bottom_left|bottom_center|bottom_right)\\b",
+          "name": "keyword.operator.pivot.stonescript"
+        }
+      ]
+    },
+    "classes": {
+      "patterns": [
+        {
+          "match": "\\b(id|name|stars|begin|loop|bestTime|averageTime|isQuest|name|distance|count|hp|maxhp|armor|maxarmor|buffs|buffs.c|buffs.s|debuffs|debuffs.c|debuffs.s|state|time|level|left|right|potion|distance|count|string|enabled|paused|idle|walking|(?<=armor\\.)(f)|(?<=(pos|input)\\.)(x|y|z)|(?<=screen\\.)(i|x|w|h)|stone|wood|tar|ki|bronze|crystals|direction|name|ms|year|month|day|hour|minute|second)\\b|\\b(loc|foe|item|harvest|pickup|time|totaltime|armor|hp|maxhp|maxarmor|buffs|debuffs|pos|ai|key|input|res|face|player|totalgp|rng|rngf|screen|utc|draw|int(?!,|\\)|\\])|item|math|music|ambient|ui|root|canvas|te|language|storage|string)\\b",
+          "name": "support.class.stonescript"
+        },
+        {
+          "match": "(?<!\\.)\\bcolor\\b",
+          "name": "support.class.stonescript"
+        },
+        {
+          "match": "\\b(name|state|time|distance|count|(?<=screen\\.[xyz])\\w)\\b",
+          "name": "support.property-value.stonescript"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "support.function.stonescript",
+          "match": "([A-Za-z_][A-Za-z0-9_]*(?=\\())"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "(?<=^ *)\\b(var|import|func|new|play)\\b",
+          "name": "keyword.stonescript"
+        },
+        {
+          "match": "\\b(disable|enable)\\s(hud|player|loadout input|loadout print|pause|banner|abilities|hud)\\b",
+          "name": "keyword.stonescript"
+        },
+        {
+          "match": "\\b(equip|equipL|equipR|activate|loadout|brew|for|return)\\b",
+          "name": "keyword.control.stonescript"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "match": "\\b(true|false|none)\\b",
+          "name": "constant.language.stonescript"
+        },
+        {
+          "match": "(\\b|(?<=^ *>(`|o|h|c|f|\\()))(-)?[0-9.]+\\b",
+          "name": "constant.numeric.stonescript"
+        }
+      ]
+    },
+    "colors": {
+      "patterns": [
+        {
+          "match": "(#[0-9a-fA-F]{6})",
+          "name": "constant.other.color.stonescript"
+        },
+        {
+          "match": "(#[0-9a-fA-F]{3})",
+          "name": "constant.other.color.stonescript"
+        },
+        {
+          "match": "(#red|#white|#cyan|#yellow|#green|#blue)",
+          "name": "constant.other.color.stonescript"
+        },
+        {
+          "match": "(#rain[0-9a-fA-F]{2})",
+          "name": "constant.other.color.stonescript"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.stonescript"
+        },
+        {
+          "begin": "'",
+          "end": "'",
+          "name": "string.quoted.single.stonescript"
+        },
+        {
+          "begin": "(?<=^ *>[`ohcf] ?(@.*?@|(-|\\+)?\\d+),(@.*?@|(-|\\+)?\\d+),#\\w{3,6},(\\n *\\^)?)|(?<=^ *>[`ohcf] ?(@.*?@|(-|\\+)?\\d+),(@.*?@|(-|\\+)?\\d+),(\\n *\\^)?)(?!#\\w{3,6},)|(?<=^ *>)(?![`ohcf] ?(@.*?@|(-|\\+)?\\d+),(@.*?@|(-|\\+)?\\d+),)|(?<=^ *>\\()",
+          "end": "(?<=^)(?! *\\^)",
+          "name": "meta.stonescript",
+          "patterns": [
+            { "match": "^ *\\^", "name": "keyword.control.stonescript"},
+            { "include": "#ascii" },
+            { "include": "#links" },
+            { "match": "(@.+?@)|(ascii.+?asciiend)|(.+?)", 
+              "captures": {
+                "3": {"name": "string.interpolated.stonescript"}
+              }
+            }
+          ]
+        },
+        {
+          "match": "^ *>(^ *>|\\(|[`ohcf](?= ?(@.*?@|(-|\\+)?\\d+),(@.*?@|(-|\\+)?\\d+),))?",
+          "name": "keyword.control.stonescript"
+        },
+        {
+          "match": "\\\\n",
+          "name": "constant.character.escape"
+        }
+      ]
+    }
+  }
+}

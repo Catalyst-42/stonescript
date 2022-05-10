@@ -1,0 +1,60 @@
+{
+	"name": "stonescript",
+	"displayName": "Stonescript",
+	"description": "Syntax highlighting for Stonescript",
+	"version": "1.0.0",
+	"publisher": "Catalyst-42",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Catalyst-42"
+	},
+	"engines": {
+		"vscode": "^1.50.0"
+	},
+	"activationEvents": [
+		"onLanguage:stonescript"
+	],
+	"icon": "./img/icon.png",
+	"main": "./src/extension",
+	"scripts": {
+		"build": "js-yaml syntaxes/stonescript.tmLanguage.yaml > syntaxes/stonescript.tmLanguage.json"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "stonescript",
+				"aliases": [
+					"Stonescript",
+					"stonescript"
+				],
+				"extensions": [
+					".txt"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "stonescript",
+				"scopeName": "source.txt",
+				"path": "./syntaxes/stonescript.tmLanguage.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"js-yaml": "^3.14.0"
+	},
+	"__metadata": {
+		"installedTimestamp": 1649008499369,
+		"id": "3c099780-3d3a-46bd-892b-944157f813c0",
+		"publisherId": "3c316d72-edc1-436e-b1c9-f75803732b90",
+		"publisherDisplayName": "Catalyst-42",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"preRelease": false
+	}
+}
