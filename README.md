@@ -9,5 +9,5 @@ This is a stonescript language support extension. Created to make it easier to w
 
 ## Samples
 Theme: [Material Dark](https://marketplace.visualstudio.com/items?itemName=romanrei.material-dark)
-![code sample 1](https://github.com/Catalyst-42/stonescript/img/code.png)
-![code sample 2](https://github.com/Catalyst-42/stonescript/img/code2.png)
+![code sample 1](https://github.com/Catalyst-42/stonescript/blob/main/img/code.png)
+![code sample 2](https://github.com/Catalyst-42/stonescript/blob/main/img/code2.png)
