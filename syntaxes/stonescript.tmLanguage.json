@@ -115,8 +115,12 @@
           "name": "keyword.control.stonescript"
         },
         {
-          "match": "\\b(poison|vigor|aether|fire|air|ice|long|sword|compound|dashing|bashing|shield|wand|bardiche|heavy|repeating|crossbow|hammer|(quarter|socketed )?staff|skeleton arm|blade|mask|mind|(?<!res.)(stone|wood|tar|bronze|ki)|(?<!item.)potion|empty|stones|hatchet|shovel|grappling hook|mind|stones|hatchet|shovel|grappling|moon|mind|triskelion|fissure|quest|ouroboros|xp|xi|star|sight|runestone)\\b",
+          "match": "\\b(poison|vigor|aether|fire|air|ice|long|sword|compound|dashing|bashing|shield|wand|bardiche|heavy|repeating|crossbow|hammer|(quarter|socketed )?staff|skeleton arm|arm|blade|mask|mind|(?<!res.)(stone|wood|tar|bronze|ki)|(?<!item.)potion|empty|stones|hatchet|shovel|grappling hook|mind|stones|hatchet|shovel|grappling|moon|mind|triskelion|fissure|quest|ouroboros|xp|xi|star|sight|runestone)\\b",
           "name": "keyword.operator.weapon-filter.stonescript"
+        },
+        {
+          "match": "(?<=^ *equip(L|R)? +.*)\\b(D,dp|dP|dh|dL|du|dU|df|dF|di|dI|A|ap|aP|ah|aL|au|aU|af|aF|ai|aI)\\b",
+          "name": "keyword.operator.weapon-effect.stonescript"
         },
         {
           "match": "\\b(arachnid|serpent|insect|machine|humanoid|elemental|boss|phase1|phase2|phase3|spawner|flying|slow|ranged|explode|swarm|unpushable|undamageable|magic_resist|magic_vulnerability|immune_to_stun|immune_to_ranged|immune_to_debuff_damage|immune_to_physical)\\b",
@@ -131,7 +135,7 @@
           "name": "keyword.operator.effect-filter.stonescript"
         },
         {
-          "match": "\\b((?<!\\.)left|(?<!\\.)right|(?<!\\.)up|(?<!\\.)down|primary|back|ability1|ability2|bumpL|bumpR|leftBegin|rightBegin|upBegin|downBegin|primaryBegin|backBegin|ability1Begin|ability2Begin|bumpLBegin|bumpRBegin|leftEnd|rightEnd|upEnd|downEnd|primaryEnd|backEnd|ability1End|ability2End|bumpLEnd|bumpREnd|←|→|↑|↓|A|D|W|S|LMB|Return|X|Shift|Control|Z|C)\\b",
+          "match": "(?<=key.*(=|!).*)\\b(down|primary|back|ability1|ability2|bumpL|bumpR|leftBegin|rightBegin|upBegin|downBegin|primaryBegin|backBegin|ability1Begin|ability2Begin|bumpLBegin|bumpRBegin|leftEnd|rightEnd|upEnd|downEnd|primaryEnd|backEnd|ability1End|ability2End|bumpLEnd|bumpREnd|←|→|↑|↓|A|D|W|S|LMB|Return|X|Shift|Control|Z|C)\\b",
           "name": "keyword.operator.input-filter.stonescript"
         },
         {

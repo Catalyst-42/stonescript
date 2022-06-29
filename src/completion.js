@@ -286,7 +286,7 @@ function provideCompletionItems(document, position, token, context) {
 		]
 	}
 
-	if (/equip(L|R)? +/g.test(lineText)) {
+	if (/(equip(L|R)?)|(item\.(left|right) *) *(=|!) */g.test(lineText)) {
 		dependencies = [
 			// Weapons
 			'poison',
@@ -310,7 +310,7 @@ function provideCompletionItems(document, position, token, context) {
 			'staff',
 			'quarterstaff',
 			'socketed staff',
-			'skeleton arm',
+			'arm',
 			'blade',
 			'mask',
 			'mind',
@@ -1140,12 +1140,30 @@ function provideCompletionItems(document, position, token, context) {
 		]
 	}
 	
+	if (/(\[.*\]\.$|\[.*\]\.\w+$)/g.test(lineText)) {
+		dependencies = [
+			{ name: 'Add()', snippet: 'Add($0)', type: vscode.CompletionItemKind.Function },
+			{ name: 'Clear()', snippet: 'Clear()', type: vscode.CompletionItemKind.Function },
+			{ name: 'Contains()', snippet: 'Contains($0)', type: vscode.CompletionItemKind.Function },
+			{ name: 'Count()', snippet: 'Count()', type: vscode.CompletionItemKind.Function },
+			{ name: 'Emplace()', snippet: 'Emplace($0)', type: vscode.CompletionItemKind.Function },
+			{ name: 'IndexOf()', snippet: 'IndexOf($0)', type: vscode.CompletionItemKind.Function },
+			{ name: 'Insert()', snippet: 'Insert($0)', type: vscode.CompletionItemKind.Function },
+			{ name: 'RemoveAt()', snippet: 'RemoveAt($0)', type: vscode.CompletionItemKind.Function },
+			{ name: 'Sort()', snippet: 'Sort()', type: vscode.CompletionItemKind.Function }
+		]
+	}
+
+	if (/\b(var|func)\b *(\w+)?$/g.test(lineText)) {
+		dependencies = ['']
+	}
+
 	var clear_document
 	clear_document = document.getText().replace(/^ *\/\*(.|\n)*?\*\/|\/\/.+$/gm, '')
 	
 	// functions completion
 	functions = clear_document.match(/^ *func .+(?=\(|$)/gm)
-	if (functions != null) {
+	if (functions != null && /\b(func)\b *(\w+)?$/g.test(lineText) == false) {
 		functions.map(i => {
 			func_name = i.split('func ')[1].replace(/\s/g, '')
 			func_content = func_name.split('(')[1]
@@ -1164,7 +1182,7 @@ function provideCompletionItems(document, position, token, context) {
 	// variables completion and ui.Add... elements
 	variables = clear_document.match(/^ *var .+$/gm)
 	var re
-	if (variables != null) {
+	if (variables != null && /\b(var)\b *(\w+)?$/g.test(lineText) == false) {
 		variables.map(i => {
 			var_name = i.split('var ')[1].replace(/\s/g, '')
 			var_content = var_name.split('=')[1]
