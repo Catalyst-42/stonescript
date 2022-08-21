@@ -331,6 +331,7 @@ function provideCompletionItems(document, position, token, context) {
 			'xi',
 			'star',
 			'sight',
+			'shiny'
 		]
 	}
 

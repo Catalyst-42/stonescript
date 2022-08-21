@@ -115,11 +115,15 @@
           "name": "keyword.control.stonescript"
         },
         {
-          "match": "\\b(poison|vigor|aether|fire|air|ice|long|sword|compound|dashing|bashing|shield|wand|bardiche|heavy|repeating|crossbow|hammer|(quarter|socketed )?staff|skeleton arm|arm|blade|mask|mind|(?<!res.)(stone|wood|tar|bronze|ki)|(?<!item.)potion|empty|stones|hatchet|shovel|grappling hook|mind|stones|hatchet|shovel|grappling|moon|mind|triskelion|fissure|quest|ouroboros|xp|xi|star|sight|runestone)\\b",
+          "match": "\\b(poison|vigor|aether|fire|air|ice|long|sword|compound|dashing|bashing|shield|wand|bardiche|heavy|repeating|crossbow|hammer|(quarter|socketed )?staff|skeleton arm|arm|blade|mask|mind|(?<!res.)(stone|wood|tar|bronze|ki)|(?<!item.)potion|empty|stones|hatchet|shovel|grappling hook|mind|stones|hatchet|shovel|grappling|moon|mind|triskelion|fissure|quest|ouroboros|xp|xi|star|sight|runestone|shiny)\\b",
           "name": "keyword.operator.weapon-filter.stonescript"
         },
         {
-          "match": "(?<=^ *equip(L|R)? +.*)\\b(D,dp|dP|dh|dL|du|dU|df|dF|di|dI|A|ap|aP|ah|aL|au|aU|af|aF|ai|aI)\\b",
+          "match": "(?<=^ *equip(L|R)? +.*)\\b(D|dp|dP|dh|dL|du|dU|df|dF|di|dI|A|ap|aP|ah|aL|au|aU|af|aF|ai|aI)\\b",
+          "name": "keyword.operator.weapon-effect.stonescript"
+        },
+        {
+          "match": "(?<=item\\.(right|left) *(=|!) +.*)\\b(D|dp|dP|dh|dL|du|dU|df|dF|di|dI|A|ap|aP|ah|aL|au|aU|af|aF|ai|aI)\\b",
           "name": "keyword.operator.weapon-effect.stonescript"
         },
         {
