@@ -115,7 +115,7 @@
           "name": "keyword.control.stonescript"
         },
         {
-          "match": "\\b(poison|vigor|aether|fire|air|ice|long|sword|compound|dashing|bashing|shield|wand|bardiche|heavy|repeating|crossbow|hammer|(quarter|socketed )?staff|skeleton arm|arm|blade|mask|mind|(?<!res.)(stone|wood|tar|bronze|ki)|(?<!item.)potion|empty|stones|hatchet|shovel|grappling hook|mind|stones|hatchet|shovel|grappling|moon|mind|triskelion|fissure|quest|ouroboros|xp|xi|star|sight|runestone|shiny)\\b",
+          "match": "\\b(poison|vigor|aether|fire|air|ice|long|sword|compound|dashing|bashing|shield|wand|bardiche|heavy|repeating|crossbow|hammer|(quarter|socketed )?staff|skeleton arm|arm|blade|mask|mind|(?<!res.)(stone|wood|tar|bronze|ki)|(?<!item.)potion|empty|stones|hatchet|shovel|grappling hook|mind|stones|hatchet|shovel|grappling|moon|mind|triskelion|fissure|quest|ouroboros|xp|xi|star|sight|runestone|shiny|gold)\\b",
           "name": "keyword.operator.weapon-filter.stonescript"
         },
         {
@@ -195,7 +195,11 @@
           "name": "keyword.stonescript"
         },
         {
-          "match": "\\b(disable|enable)\\s(hud|player|loadout input|loadout print|pause|banner|abilities|hud)\\b",
+          "match": "\\b(disable|enable)\\s(player|loadout input|loadout print|pause|banner|abilities)\\b",
+          "name": "keyword.stonescript"
+        },
+        {
+          "match": "\\b(disable|enable)\\shud(\\s[pfarbu]{1,6})?\\b",
           "name": "keyword.stonescript"
         },
         {

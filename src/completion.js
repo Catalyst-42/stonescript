@@ -40,6 +40,8 @@ function provideCompletionItems(document, position, token, context) {
 				'rngf',
 				'input',
 				'screen',
+				'sys',
+				'stonescript',
 				'time',
 				'totaltime',
 				'utc',
@@ -307,6 +309,7 @@ function provideCompletionItems(document, position, token, context) {
 			'heavy crossbow',
 			'repeating crossbow',
 			'hammer',
+			'heavy hammer',
 			'staff',
 			'quarterstaff',
 			'socketed staff',
@@ -331,7 +334,8 @@ function provideCompletionItems(document, position, token, context) {
 			'xi',
 			'star',
 			'sight',
-			'shiny'
+			'shiny',
+			'gold'
 		]
 	}
 
@@ -919,6 +923,20 @@ function provideCompletionItems(document, position, token, context) {
 		]
 	}
 
+	if (/(\bsys\.$|\bsys\.\w+$)/g.test(lineText)) {
+		dependencies = [
+			'cacheRemoteFiles',
+			'fileUrl',
+			{name : 'SetFileUrl()', snippet: 'SetFileUrl($0)', type: vscode.CompletionItemKind.Function },
+		]
+	}
+
+	if (/(\bstonescript\.$|\bstonescript\.\w+$)/g.test(lineText)) {
+		dependencies = [
+			{name : 'SetMaxExecutionTime()', snippet: 'SetMaxExecutionTime($0)', type: vscode.CompletionItemKind.Function },
+		]
+	}
+
 	if (/\.(d|a)x/g.test(lineText)) {
 		dependencies = [
 			'center',
@@ -978,11 +996,11 @@ function provideCompletionItems(document, position, token, context) {
 			'right.id',
 			'potion',
 			{ name: 'CanActivate()', snippet: 'CanActivate($0)', type: vscode.CompletionItemKind.Function },
-			{ name: 'GetCooldown()', snippet: 'GetCooldown(${1|"bardiche","bash","blade","mask","dash","hatchet","mind","quarterstaff","skeleton_arm"|})$0', type: vscode.CompletionItemKind.Function },
+			{ name: 'GetCooldown()', snippet: 'GetCooldown(${1|"bardiche","bash","blade","mask","dash","hatchet","hammer","mind","quarterstaff","skeleton_arm"|})$0', type: vscode.CompletionItemKind.Function },
 			{ name: 'GetCount()', snippet: 'GetCount($0)', type: vscode.CompletionItemKind.Function }
 		]
 	}
-
+	
 	if (/(\bint\.$|\bint\.\w+$)/g.test(lineText)) {
 		dependencies = [
 			{ name: 'Parse()', snippet: 'Parse($0)', type: vscode.CompletionItemKind.Function},
@@ -1054,11 +1072,7 @@ function provideCompletionItems(document, position, token, context) {
 		dependencies = ['year', 'month', 'day', 'hour', 'minute', 'second']
 	}
 
-	if (/\bdisable[ ]+$/g.test(lineText)) {
-		dependencies = ['abilities', 'banner', 'hud', 'loadout input', 'loadout print',  'pause', 'player']
-	}
-
-	if (/\benable \w+$/g.test(lineText)) {
+	if (/\b(enable|disable) \w+$/g.test(lineText)) {
 		dependencies = ['abilities', 'banner', 'hud', 'loadout input', 'loadout print',  'pause', 'player']
 	}
 

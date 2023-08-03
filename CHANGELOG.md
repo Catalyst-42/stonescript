@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.3 (3 August 2023)
+* equip `gold` weapon coloring and completion
+* equip `heavy hammer` weapon completion and coloring
+* `sys.` constants and functions completion
+* `stonescript.SetMaxExecutionTime()` function completion
+* updated `disable hud` info and added `pfarbu` options coloring
+* fixed `disable` completion suggestions
+
 ## 1.0.2 (21 August 2022)
 * equip `shiny` weapon coloring and completion
 * `item.left` / `item.right` weapon classes (dI dF F...)
