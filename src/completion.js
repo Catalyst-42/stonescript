@@ -42,6 +42,7 @@ function provideCompletionItems(document, position, token, context) {
 				'screen',
 				'sys',
 				'stonescript',
+				'summon',
 				'time',
 				'totaltime',
 				'utc',
@@ -300,6 +301,7 @@ function provideCompletionItems(document, position, token, context) {
 			'sword',
 			'long',
 			'wand',
+			'talisman',
 			'shield',
 			'dashing shield',
 			'bashing shield',
@@ -936,6 +938,17 @@ function provideCompletionItems(document, position, token, context) {
 			{name : 'SetMaxExecutionTime()', snippet: 'SetMaxExecutionTime($0)', type: vscode.CompletionItemKind.Function },
 		]
 	}
+	
+	if (/(\bsummon\.$|\bsummon\.\w+$)/g.test(lineText)) {
+		dependencies = [
+			'count',
+			{name : 'GetId()', snippet: 'GetId()', type: vscode.CompletionItemKind.Function },
+			{name : 'GetName()', snippet: 'GetName()', type: vscode.CompletionItemKind.Function },
+			{name : 'GetVar()', snippet: 'GetVar($0)', type: vscode.CompletionItemKind.Function },
+			{name : 'GetState()', snippet: 'GetState()', type: vscode.CompletionItemKind.Function },
+			{name : 'GetTime()', snippet: 'GetTime()', type: vscode.CompletionItemKind.Function }
+		]
+	}
 
 	if (/\.(d|a)x/g.test(lineText)) {
 		dependencies = [
@@ -1054,6 +1067,7 @@ function provideCompletionItems(document, position, token, context) {
 			{ name: 'ResetOffset()', snippet: 'ResetOffset()', type: vscode.CompletionItemKind.Function }
 		]
 	}
+	
 	if (/(\btime\.$|\btime\.\w+$)/g.test(lineText)) {
 		dependencies = [
 			'ms',

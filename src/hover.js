@@ -654,6 +654,12 @@ function provideHover(document, position, token) {
 		{ id: 'te.xt', name: '```stonescript\nte.xt(str)\n```\n---\n \n * Translates a given English text into the player\'s selected language. If a translated version is not found, then the input text is returned instead. Alternatively, a text identifier (TID) can be used as input--albeit the exhausting list of TIDs is beyond the scope of this manual' },
 		{ id: 'te.GetTID', name: '```stonescript\nte.GetTID(str)\n```\n---\n \n * Returns the text identifier (TID) for a given text. The input text is expected in the language selected by the player' },
 		{ id: 'te.ToEnglish', name: '```stonescript\nte.ToEnglish(str)\n```\n---\n \n * Translates a given text from the player\'s selected language into the original English text. If a translated version is not found, then the input text is returned instead' },
+		{ id: 'summon.count', name: 'The number of summoned allies currently in game' },
+		{ id: 'summon.GetId', name: '```stonescript\n summon.GetId(index = 0) \n```\n---\n * Returns the ID of the summon at a given `index`. The `index` parameter is optional and defaults to zero (first summon). Returns null if no summons are at that `index`' },
+		{ id: 'summon.GetName', name: '```stonescript\n summon.GetName(index = 0) \n```\n---\n * Returns the localized name of the summon at a given `index`. The `index` parameter is optional and defaults to zero (first summon). Returns null if no summons are at that `index`.' },
+		{ id: 'summon.GetVar', name: '```stonescript\n summon.GetVar(varName, index = 0) \n```\n---\n * Returns the value for a custom variable on a summon. Different types of summons expose different variables, based on their unique abilities. The `index` parameter is optional and defaults to zero (first summon). Returns null if no summons are at that `index`. Shows an error if varName does not correspond to a valid variable' },
+		{ id: 'summon.GetState', name: '```stonescript\n summon.GetState(index = 0) \n```\n---\n * Returns a number representing the current state of a summon. The `index` parameter is optional and defaults to zero (first summon). Returns -1 if no summons are at that `index`' },
+		{ id: 'summon.GetTime', name: '```stonescript\n summon.GetTime(index = 0) \n```\n---\n * Returns the elapsed number of frames in the current state of a summon. The `index` parameter is optional and defaults to zero (first summon). Returns -1 if no summons are at that `index`' },
 		// #endregion
 		// #region Weapons
 		{ id: 'sword', name: 'Weapon' },

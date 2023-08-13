@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.4 (13 August 2023)
+* `summon` namespace
+* `talisman` item in equip completion
+* fixed `sys.fileUrl` and `sys.cacheRemoteFiles` coloring
+* fixed `stonescript` namespace coloring
+
 ## 1.0.3 (3 August 2023)
 * equip `gold` weapon coloring and completion
 * equip `heavy hammer` weapon completion and coloring
