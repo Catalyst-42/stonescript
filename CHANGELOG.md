@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.5 (25 August 2023)
+* `key` namespace
+* `buffs.oldest` and `debuffs.oldest`
+
 ## 1.0.4 (13 August 2023)
 * `summon` namespace
 * `talisman` item in equip completion

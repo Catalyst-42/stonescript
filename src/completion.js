@@ -245,11 +245,11 @@ function provideCompletionItems(document, position, token, context) {
 	}
 
 	if (/(\bbuffs\.$|\bbuffs\.\w+$)/g.test(lineText)) {
-		dependencies = ['count', 'string']
+		dependencies = ['count', 'string', 'oldest']
 	}
 
 	if (/(\bdebuffs\.$|\bdebuffs\.\w+$)/g.test(lineText)) {
-		dependencies = ['count', 'string']
+		dependencies = ['count', 'string', 'oldest']
 	}
 
 	if (/buffs.string *(=|!) *(\w+)?$/g.test(lineText)) {
@@ -930,6 +930,17 @@ function provideCompletionItems(document, position, token, context) {
 			'cacheRemoteFiles',
 			'fileUrl',
 			{name : 'SetFileUrl()', snippet: 'SetFileUrl($0)', type: vscode.CompletionItemKind.Function },
+		]
+	}
+
+	if (/(\bkey\.$|\bkey\.\w+$)/g.test(lineText)) {
+		dependencies = [
+			{name : 'Bind()', snippet: 'Bind($0)', type: vscode.CompletionItemKind.Function },
+			{name : 'GetKeyAct()', snippet: 'GetKeyAct($0)', type: vscode.CompletionItemKind.Function },
+			{name : 'GetActKey()', snippet: 'GetActKey($0)', type: vscode.CompletionItemKind.Function },
+			{name : 'GetActKey2()', snippet: 'GetActKey2($0)', type: vscode.CompletionItemKind.Function },
+			{name : 'GetActLabel()', snippet: 'GetActLabel($0)', type: vscode.CompletionItemKind.Function },
+			{name : 'ResetBinds()', snippet: 'ResetBinds()', type: vscode.CompletionItemKind.Function },
 		]
 	}
 
