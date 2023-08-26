@@ -1020,7 +1020,7 @@ function provideCompletionItems(document, position, token, context) {
 			'right.id',
 			'potion',
 			{ name: 'CanActivate()', snippet: 'CanActivate($0)', type: vscode.CompletionItemKind.Function },
-			{ name: 'GetCooldown()', snippet: 'GetCooldown(${1|"bardiche","bash","blade","mask","dash","hatchet","hammer","mind","quarterstaff","skeleton_arm"|})$0', type: vscode.CompletionItemKind.Function },
+			{ name: 'GetCooldown()', snippet: 'GetCooldown(${1|"aether_talisman","bardiche","bash","blade","cinderwisp","mask","dash","fire_talisman","hatchet","hammer","mind","quarterstaff","skeleton_arm","voidweaver"|})$0', type: vscode.CompletionItemKind.Function },
 			{ name: 'GetCount()', snippet: 'GetCount($0)', type: vscode.CompletionItemKind.Function }
 		]
 	}
