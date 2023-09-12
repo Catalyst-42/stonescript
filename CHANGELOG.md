@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.7 (12 September 2023)
+* item's `state` and `time` completion
+
+## 1.0.6 (26 August 2023)
+* talismans in `item.GetCooldown()` function
+
 ## 1.0.5 (25 August 2023)
 * `key` namespace
 * `buffs.oldest` and `debuffs.oldest`
