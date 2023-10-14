@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.8 (14 October 2023)
+* added `foe.GetCount()` function
+* added `item.GetLoadoutL()` and `item.GetLoadoutR()` functions
+* added `sys.os`, `sys.isMobile`, `sys.isPC` and `sys.isConsole` constants
+
 ## 1.0.7 (12 September 2023)
 * item's `state` and `time` completion
 

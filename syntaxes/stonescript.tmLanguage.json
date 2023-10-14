@@ -167,7 +167,7 @@
     "classes": {
       "patterns": [
         {
-          "match": "\\b(id|name|stars|begin|loop|bestTime|averageTime|isQuest|name|distance|count|hp|maxhp|armor|maxarmor|buffs|buffs.c|buffs.s|debuffs|debuffs.c|debuffs.s|(?<=buffs\\.)(oldest)|state|time|level|left|right|potion|distance|count|string|enabled|paused|idle|walking|(?<=armor\\.)(f)|(?<=(pos|input)\\.)(x|y|z)|(?<=screen\\.)(i|x|w|h)|stonescript|sys|(?<=sys\\.)(cacheRemoteFiles|fileUrl)|summon|(?<=summon\\.)(count)|stone|wood|tar|ki|bronze|crystals|direction|name|ms|year|month|day|hour|minute|second)\\b|\\b(loc|foe|item|harvest|pickup|time|totaltime|armor|hp|maxhp|maxarmor|buffs|debuffs|pos|ai|key|input|res|face|player|totalgp|rng|rngf|screen|utc|draw|int(?!,|\\)|\\])|item|math|music|ambient|ui|root|canvas|te|language|storage|string)\\b",
+          "match": "\\b(id|name|stars|begin|loop|bestTime|averageTime|isQuest|name|distance|count|hp|maxhp|armor|maxarmor|buffs|buffs.c|buffs.s|debuffs|debuffs.c|debuffs.s|(?<=buffs\\.)(oldest)|state|time|level|left|right|potion|distance|count|string|enabled|paused|idle|walking|(?<=armor\\.)(f)|(?<=(pos|input)\\.)(x|y|z)|(?<=screen\\.)(i|x|w|h)|stonescript|sys|(?<=sys\\.)(cacheRemoteFiles|fileUrl|os|isMobile|isPc|isConsole)|summon|(?<=summon\\.)(count)|stone|wood|tar|ki|bronze|crystals|direction|name|ms|year|month|day|hour|minute|second)\\b|\\b(loc|foe|item|harvest|pickup|time|totaltime|armor|hp|maxhp|maxarmor|buffs|debuffs|pos|ai|key|input|res|face|player|totalgp|rng|rngf|screen|utc|draw|int(?!,|\\)|\\])|item|math|music|ambient|ui|root|canvas|te|language|storage|string)\\b",
           "name": "support.class.stonescript"
         },
         {

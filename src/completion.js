@@ -927,6 +927,10 @@ function provideCompletionItems(document, position, token, context) {
 
 	if (/(\bsys\.$|\bsys\.\w+$)/g.test(lineText)) {
 		dependencies = [
+			'os',
+			'isMobile',
+			'isPc',
+			'isConsole',
 			'cacheRemoteFiles',
 			'fileUrl',
 			{name : 'SetFileUrl()', snippet: 'SetFileUrl($0)', type: vscode.CompletionItemKind.Function },
@@ -1009,7 +1013,21 @@ function provideCompletionItems(document, position, token, context) {
 	}
 
 	if (/(\bfoe\.$|\bfoe\.\w+$)/g.test(lineText)) {
-		dependencies = ['name', 'distance', 'count', 'hp', 'maxhp', 'armor', 'maxarmor', 'buffs', 'debuffs', 'state', 'time', 'level']
+		dependencies = [
+			'name', 
+			'distance', 
+			'count', 
+			'hp', 
+			'maxhp', 
+			'armor', 
+			'maxarmor', 
+			'buffs', 
+			'debuffs', 
+			'state', 
+			'time', 
+			'level',
+			{ name: 'GetCount()', snippet: 'GetCount($0)', type: vscode.CompletionItemKind.Function },
+		]
 	}
 
 	if (/(\bitem\.$|\bitem\.\w+$)/g.test(lineText)) {
@@ -1025,7 +1043,9 @@ function provideCompletionItems(document, position, token, context) {
 			'potion',
 			{ name: 'CanActivate()', snippet: 'CanActivate($0)', type: vscode.CompletionItemKind.Function },
 			{ name: 'GetCooldown()', snippet: 'GetCooldown(${1|"aether_talisman","bardiche","bash","blade","cinderwisp","mask","dash","fire_talisman","hatchet","hammer","mind","quarterstaff","skeleton_arm","voidweaver"|})$0', type: vscode.CompletionItemKind.Function },
-			{ name: 'GetCount()', snippet: 'GetCount($0)', type: vscode.CompletionItemKind.Function }
+			{ name: 'GetCount()', snippet: 'GetCount($0)', type: vscode.CompletionItemKind.Function },
+			{ name: 'GetLoadoutL()', snippet: 'GetLoadoutL($0)', type: vscode.CompletionItemKind.Function },
+			{ name: 'GetLoadoutR()', snippet: 'GetLoadoutR($0)', type: vscode.CompletionItemKind.Function }
 		]
 	}
 	
