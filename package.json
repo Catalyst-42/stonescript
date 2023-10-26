@@ -2,7 +2,7 @@
 	"name": "c42-stonescript",
 	"displayName": "Stonescript",
 	"description": "Syntax highlighting for Stonescript",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"publisher": "Catalyst-42",
 	"repository": {
 		"type": "git",

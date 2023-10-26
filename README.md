@@ -21,4 +21,8 @@ Hover
 Completion
 ![completion gif](https://raw.githubusercontent.com/Catalyst-42/stonescript/main/img/completion.gif)
 
+## Known issues
++ This is not an actual Lexer / Parser, all code checking based on many regex expressions
++ Somethimes docstring does not match to actual function (especially for variable with ui / BigNumber data types)
+
 <!-- https://raw.githubusercontent.com/Catalyst-42/stonescript/main/img/IMAGE_FILE.png -->

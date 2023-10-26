@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.9 (26 October 2023)
+* BigNumber variable type and their function completion
+* added `time.msbn` and removed `time.ms`
+* fidex `math.pi` coloring
+* added `math.e`, `math.Exp()` and `math.Atan()`
+* added Known issues in README
+* added herobrine
+
 ## 1.0.8 (14 October 2023)
 * added `foe.GetCount()` function
 * added `item.GetLoadoutL()` and `item.GetLoadoutR()` functions

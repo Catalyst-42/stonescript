@@ -1105,7 +1105,7 @@ function provideCompletionItems(document, position, token, context) {
 	
 	if (/(\btime\.$|\btime\.\w+$)/g.test(lineText)) {
 		dependencies = [
-			'ms',
+			'msbn',
 			'year',
 			'month',
 			'day',
@@ -1127,6 +1127,10 @@ function provideCompletionItems(document, position, token, context) {
 
 	if (/(\bmath\.$|\bmath\.\w+$)/g.test(lineText)) {
 		dependencies = [
+			'e',
+			'pi',
+			{ name: 'BigNumber()', snippet: 'BigNumber($0)', type: vscode.CompletionItemKind.Function },
+			{ name: 'Exp()', snippet: 'Exp($0)', type: vscode.CompletionItemKind.Function },
 			{ name: 'Abs()', snippet: 'Abs($0)', type: vscode.CompletionItemKind.Function },
 			{ name: 'Sign()', snippet: 'Sign($0)', type: vscode.CompletionItemKind.Function },
 			{ name: 'Min()', snippet: 'Min(${1:num1}, ${2:num2})', type: vscode.CompletionItemKind.Function },
@@ -1142,12 +1146,12 @@ function provideCompletionItems(document, position, token, context) {
 			{ name: 'Log()', snippet: 'Log(${1:num}, ${2:base})', type: vscode.CompletionItemKind.Function },
 			{ name: 'Pow()', snippet: 'Pow(${1:num}, ${2:p})', type: vscode.CompletionItemKind.Function },
 			{ name: 'Sqrt()', snippet: 'Sqrt($0)', type: vscode.CompletionItemKind.Function },
-			'pi',
 			{ name: 'ToDeg()', snippet: 'ToDeg($0)', type: vscode.CompletionItemKind.Function },
 			{ name: 'ToRad()', snippet: 'ToRad($0)', type: vscode.CompletionItemKind.Function },
 			{ name: 'Acos()', snippet: 'Acos($0)', type: vscode.CompletionItemKind.Function },
 			{ name: 'Asin()', snippet: 'Asin($0)', type: vscode.CompletionItemKind.Function },
 			{ name: 'Atan()', snippet: 'Atan($0)', type: vscode.CompletionItemKind.Function },
+			{ name: 'Atan2()', snippet: 'Atan2($0)', type: vscode.CompletionItemKind.Function },
 			{ name: 'Cos()', snippet: 'Cos($0)', type: vscode.CompletionItemKind.Function },
 			{ name: 'Sin()', snippet: 'Sin($0)', type: vscode.CompletionItemKind.Function },
 			{ name: 'Tan()', snippet: 'Tan($0)', type: vscode.CompletionItemKind.Function }
@@ -1337,13 +1341,29 @@ function provideCompletionItems(document, position, token, context) {
 						)
 				}
 	
-				if (var_content.indexOf('ui.AddCanvas()') == 0) {
+				if (var_content.indexOf('ui.AddCanvas(') == 0) {
 					dependencies.push(
 						'blend',
 						{ name: 'Get()', snippet: 'Get($0)', type: vscode.CompletionItemKind.Function },
 						{ name: 'Set()', snippet: 'Set($0)', type: vscode.CompletionItemKind.Function },
 						{ name: 'SetFG()', snippet: 'SetFG($0)', type: vscode.CompletionItemKind.Function },
 						{ name: 'SetBG()', snippet: 'SetBG($0)', type: vscode.CompletionItemKind.Function }
+						)
+				}
+
+				if (var_content.indexOf('math.BigNumber(') == 0) {
+					dependencies.push(
+						{ name: 'Add()', snippet: 'Add($0)', type: vscode.CompletionItemKind.Function },
+						{ name: 'Sub()', snippet: 'Sub($0)', type: vscode.CompletionItemKind.Function },
+						{ name: 'Mul()', snippet: 'Mul($0)', type: vscode.CompletionItemKind.Function },
+						{ name: 'Div()', snippet: 'Div($0)', type: vscode.CompletionItemKind.Function },
+						{ name: 'Eq()', snippet: 'Eq($0)', type: vscode.CompletionItemKind.Function },
+						{ name: 'Gt()', snippet: 'Gt($0)', type: vscode.CompletionItemKind.Function },
+						{ name: 'Ge()', snippet: 'Ge($0)', type: vscode.CompletionItemKind.Function },
+						{ name: 'Lt()', snippet: 'Lt($0)', type: vscode.CompletionItemKind.Function },
+						{ name: 'Le()', snippet: 'Le($0)', type: vscode.CompletionItemKind.Function },
+						{ name: 'ToString()', snippet: 'ToString($0)', type: vscode.CompletionItemKind.Function },
+						{ name: 'ToUI()', snippet: 'ToUI($0)', type: vscode.CompletionItemKind.Function },
 						)
 				}
 
