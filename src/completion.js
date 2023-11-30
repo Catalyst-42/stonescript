@@ -921,7 +921,9 @@ function provideCompletionItems(document, position, token, context) {
 			{name : 'AddText()', snippet: 'AddText($0)', type: vscode.CompletionItemKind.Function },
 			{name : 'AddCanvas()', snippet: 'AddCanvas()', type: vscode.CompletionItemKind.Function },
 			{name : 'Clear()', snippet: 'Clear()', type: vscode.CompletionItemKind.Function },
-			{name : 'ShowBanner()', snippet: 'ShowBanner($0)', type: vscode.CompletionItemKind.Function }
+			{name : 'ShowBanner()', snippet: 'ShowBanner($0)', type: vscode.CompletionItemKind.Function },
+			{name : 'OpenInv()', snippet: 'OpenInv()', type: vscode.CompletionItemKind.Function },
+			{name : 'OpenMind()', snippet: 'OpenMind()', type: vscode.CompletionItemKind.Function },
 		]
 	}
 

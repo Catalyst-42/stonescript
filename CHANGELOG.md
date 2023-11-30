@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.10 (30 November 2023)
+* added `ui.openInv()` and `ui.openMind()`
+* added `draw.Player(x, y)` info
+
 ## 1.0.9 (26 October 2023)
 * BigNumber variable type and their function completion
 * added `time.msbn` and removed `time.ms`

@@ -595,7 +595,7 @@ function provideHover(document, position, token) {
 		{ id: 'draw.Box', name: '```stonescript\ndraw.Box(x, y, w, h, color, style)\n```\n---\n \n * Draws a rectangular shape at the specified position and size. The rectangle\'s border is defined by color and a style number. Negative style numbers cause the center of the rectangle to be transparent. CAVEAT - At this time, advanced prints always draw on top of boxes' },
 		{ id: 'draw.Clear', name: '```stonescript\ndraw.Clear()\n```\n---\n \n * Clears the entire screen' },
 		{ id: 'draw.GetSymbol', name: '```stonescript\ndraw.GetSymbol(x, y)\n```\n---\n \n * Returns the glyph at screen position (x, y)' },
-		{ id: 'draw.Player', name: '```stonescript\ndraw.Player()\n```\n---\n \n * Draws the player character, with all equipment and addons, at a specific point in the script'},
+		{ id: 'draw.Player', name: '```stonescript\ndraw.Player([x], [y])\n```\n---\n \n * Draws the player character, with all equipment and addons, at a specific point in the script. Optional offset values x, y. For drawing to an absolute screen position, see the screen namespace and derive offsets that convert from the player\'s local position to screen position'},
 		{ id: 'int.Parse', name: '```stonescript\nint.Parse(str)\n```\n---\n \n * Converts a string of a number into an integer value. If the given string is not a number an error is thrown' },
 		{ id: 'item.CanActivate', name: '```stonescript\nitem.CanActivate()\n```\n---\n \n * Returns true if it\'s possible to activate item abilities. False otherwise. In some gameplay situations all ability activations are disabled, even if they are not on cooldown, such as moments before a boss fight or during a cinematic'
 		},
@@ -668,6 +668,8 @@ function provideHover(document, position, token) {
 		{ id: 'ui.AddText', name: '```stonescript\nui.AddText(str)\n```\n---\n \n * Adds a Text object to the root Panel' },
 		{ id: 'ui.Clear', name: '```stonescript\nui.Clear()\n```\n---\n \n * Removes all UI elements from the main container' },
 		{ id: 'ui.ShowBanner', name: '```stonescript\nui.ShowBanner(str, [str])\n```\n---\n \n * Displays the animated banner with up to two messages. The banner animation restarts each time ui.ShowBanner() is called' },
+		{ id: 'ui.OpenInv', name: '```stonescript\nui.OpenInv()\n```\n---\n \n * Opens the inventory screen' },
+		{ id: 'ui.OpenMind', name: '```stonescript\nui.OpenMind()\n```\n---\n \n * Opens the Mind Stone screen' },
 		{ id: 'color.FromRGB', name: '```stonescript\ncolor.FromRGB(r, g, b)\n```\n---\n \n * Converts a color from three integer numbers (0 to 255) into a string' },
 		{ id: 'color.ToRGB', name: '```stonescript\ncolor.ToRGB(str)\n```\n---\n \n * Converts a color from string to three integer numbers (0 to 255)' },
 		{ id: 'color.Lerp', name: '```stonescript\ncolor.Lerp(c1, c2, t)\n```\n---\n \n * Interpolates linearly from color c1 to color c2 at time (percentage) t' },
