@@ -55,6 +55,7 @@ function provideCompletionItems(document, position, token, context) {
 				'var',
 				'func',
 				'return',
+				'break',
 				'for',
 				'import',
 				'new',

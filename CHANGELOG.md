@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.11 (7 February 2024)
+* added `break` keyword (LOL)
+
 ## 1.0.10 (30 November 2023)
 * added `ui.openInv()` and `ui.openMind()`
 * added `draw.Player(x, y)` info
