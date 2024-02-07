@@ -203,7 +203,7 @@
           "name": "keyword.stonescript"
         },
         {
-          "match": "\\b(equip|equipL|equipR|activate|loadout|brew|for|return|break)\\b",
+          "match": "\\b(equip|equipL|equipR|activate|loadout|brew|for|return|break|continue)\\b",
           "name": "keyword.control.stonescript"
         }
       ]

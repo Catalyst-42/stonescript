@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.12 (7 February 2024)
+* added `continue` keyword
+
 ## 1.0.11 (7 February 2024)
 * added `break` keyword (LOL)
 
