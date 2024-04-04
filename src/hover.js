@@ -554,7 +554,7 @@ function provideHover(document, position, token) {
 		{ id: 'sys.SetFileUrl', name: '```stonescript\nsys.SetFileUrl(str)\n```\n---\n \n * Changes the origin of imported scripts when using the commands `import` or `new`. Can only be called on the Mind Stone and will error if written on an imported script. Accepts any URL as a remote location, but also accepts the values `local` and `remote` as shortcuts to easily point at your local drive or to the official Stone Story RPG repository, respectively. If null is passed as parameter, then the file URL resets to the default value for your device. This global property persists between runs.' },
 		{ id: 'sys.os', name: 'The user\'s operating system, such as `Android`, `iOS`, `Linux`, `OSX` or `Windows`.' },
 		{ id: 'sys.isMobile', name: 'Returns true if the users is on `Android` or `iOS`.' },
-		{ id: 'sys.isPc', name: 'Returns true if the users is on `Win` or `Mac` or `Linux`.' },
+		{ id: 'sys.isPC', name: 'Returns true if the users is on `Win` or `Mac` or `Linux`.' },
 		// { id: 'sys.isConsole', name: '???' },
 		{ id: 'screen.i', name: 'The screen\'s position in-game, as an index that increses when the player reaches the right-side and it slides over' },
 		{ id: 'screen.x', name: 'The screen\'s position in-game' },

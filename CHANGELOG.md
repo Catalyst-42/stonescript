@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.13 (4 April 2024)
+* fixed `sys.isPC` constant
+* `big_tomb` foe suggestion
+* `tower shield` item suggestion
+
 ## 1.0.12 (7 February 2024)
 * added `continue` keyword
 
