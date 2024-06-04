@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.14 (4 June 2024)
+* undocumented `loc.nextGoalId`, `loc.nextGoalName` and `loc.nextGoalStars`
+
 ## 1.0.13 (4 April 2024)
 * fixed `sys.isPC` constant
 * `big_tomb` foe suggestion

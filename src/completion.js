@@ -909,6 +909,9 @@ function provideCompletionItems(document, position, token, context) {
 			'isQuest',
 			'averageTime',
 			'bestTime',
+			'nextGoalId',
+			'nextGoalName',
+			'nextGoalStars',
 			{ name: 'Leave()', snippet: 'Leave()', type: vscode.CompletionItemKind.Function },
 			{ name: 'Pause()', snippet: 'Pause()',type: vscode.CompletionItemKind.Function }
 		]
