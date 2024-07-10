@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.15 (10 July 2024)
+* `event.GetObjectiveId()`, `event.GetObjectiveProgress()` and `event.GetObjectiveGoal()`
+* `encounter.isElite`, `encounter.eliteMod`
+* `item.left.gp`, `item.right.gp`
+
 ## 1.0.14 (4 June 2024)
 * undocumented `loc.nextGoalId`, `loc.nextGoalName` and `loc.nextGoalStars`
 

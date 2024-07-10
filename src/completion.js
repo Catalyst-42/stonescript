@@ -74,6 +74,8 @@ function provideCompletionItems(document, position, token, context) {
 				'ui',
 				'color',
 				'button',
+				'encounter',
+				'event',
 				{ name: 'Type()', snippet: 'Type($0)', type: vscode.CompletionItemKind.Function },
 				{ name: 'ascii ... asciiend', snippet: 'ascii $0 asciiend', type: vscode.CompletionItemKind.Keyword },
 				// Resources
@@ -917,6 +919,21 @@ function provideCompletionItems(document, position, token, context) {
 		]
 	}
 
+	if (/(\bevent\.$|\bevent\.\w+$)/g.test(lineText)) {
+		dependencies = [
+			{ name: 'GetObjectiveId()', snippet: 'GetObjectiveId($0)', type: vscode.CompletionItemKind.Function },
+			{ name: 'GetObjectiveProgress()', snippet: 'GetObjectiveProgress($0)', type: vscode.CompletionItemKind.Function },
+			{ name: 'GetObjectiveGoal()', snippet: 'GetObjectiveGoal($0)',type: vscode.CompletionItemKind.Function }
+		]
+	}
+
+	if (/(\bencounter\.$|\bencounter\.\w+$)/g.test(lineText)) {
+		dependencies = [
+			'isElite',
+			'eliteMod',
+		]
+	}
+
 	if (/(\bui\.$|\bui\.\w+$)/g.test(lineText)) {
 		dependencies = [
 			'root',
@@ -1048,6 +1065,8 @@ function provideCompletionItems(document, position, token, context) {
 			'right.time',
 			'left.state',
 			'right.state',
+			'left.gp',
+			'right.gp',
 			'potion',
 			{ name: 'CanActivate()', snippet: 'CanActivate($0)', type: vscode.CompletionItemKind.Function },
 			{ name: 'GetCooldown()', snippet: 'GetCooldown(${1|"aether_talisman","bardiche","bash","blade","cinderwisp","mask","dash","fire_talisman","hatchet","hammer","mind","quarterstaff","skeleton_arm","voidweaver"|})$0', type: vscode.CompletionItemKind.Function },

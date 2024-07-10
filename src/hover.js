@@ -497,14 +497,14 @@ function provideHover(document, position, token) {
 		{ id: 'foe.level', name: 'The level number of the target foe' },
 		{ id: 'item.GetLoadoutR', name: '```stonescript\n item.GetLoadoutR(int) \n```\n---\n * Returns the items in a specific loadout. The integer parameter is the loadout number to query. Returns a blank string if that loadout has no item in that slot.' },
 		{ id: 'item.GetLoadoutL', name: '```stonescript\n item.GetLoadoutL(int) \n```\n---\n * Returns the items in a specific loadout. The integer parameter is the loadout number to query. Returns a blank string if that loadout has no item in that slot.' },
-		{ id: 'item.left', name: 'The item equipped to the left hand' },
-		{ id: 'item.right', name: 'The item equipped to the right hand' },
 		{ id: 'item.left.id', name: 'The ID of the item equipped to the left hand' },
 		{ id: 'item.right.id', name: 'The ID of the item equipped to the right hand' },
 		{ id: 'item.left.state', name: 'The numeric representation for an equipped weapon\'s current state' },
 		{ id: 'item.left.time', name: 'The numeric representation for an equipped weapon\'s elapsed frames within that state.' },
 		{ id: 'item.right.state', name: 'The numeric representation for an equipped weapon\'s current state' },
 		{ id: 'item.right.time', name: 'The numeric representation for an equipped weapon\'s elapsed frames within that state.' },
+		{ id: 'item.left', name: 'The item equipped to the left hand' },
+		{ id: 'item.right', name: 'The item equipped to the right hand' },
 		{ id: 'item.potion', name: 'The potion currently brewed. Includes "auto" if auto-refill is enabled on the Cauldron' },
 		{ id: 'harvest', name: 'The next harvestable object, such as a tree or boulder' },
 		{ id: 'harvest.distance', name: 'The distance between the player and the nearest harvestable object' },
@@ -846,8 +846,16 @@ function provideHover(document, position, token) {
 		{ id: 'Temple', name: 'Location (Temple) \n * Drops poison runes (∞)' },
 		{ id: 'Shop', name: 'Location (Hotspring Shop) \n * Here player can buy items and chests' },
 		{ id: 'Gate', name: 'Location (Haunted Gate) \n * Here player can win a bone chest once per day' },
+		// Events
+		{ id: 'event.GetObjectiveId', name: '```stonescript\nevent.GetObjectiveId(int)\n```\n---\n * Returns information about active objectives in a community or seasonal event. Pass the index of the desired objective. Events are usually limited to a maximum of 3 active objectives, therefore the first parameter would be 0, 1 or 2' },
+		{ id: 'event.GetObjectiveProgress', name: '```stonescript\nevent.GetObjectiveProgress(int)\n```\n---\n * Returns information about active objectives in a community or seasonal event. Pass the index of the desired objective. Events are usually limited to a maximum of 3 active objectives, therefore the first parameter would be 0, 1 or 2' },
+		{ id: 'event.GetObjectiveGoal', name: '```stonescript\nevent.GetObjectiveGoal(int)\n```\n---\n * Returns information about active objectives in a community or seasonal event. Pass the index of the desired objective. Events are usually limited to a maximum of 3 active objectives, therefore the first parameter would be 0, 1 or 2' },
 		// #endregion
 		// #region Enemies
+		// 
+		{ id: 'encounter.isElite', name: 'Tells you if the current encounter is an elite encounter or not' },
+		{ id: 'encounter.eliteMod', name: 'Tells you the special modifier, if any, for the current encounter.' },
+
 		{ id: 'target', name: 'Currently targeted enemy, waypoint or foe' },
 		{ id: 'waypoint', name: 'Target search filter' },
 		// Rocky
@@ -1045,7 +1053,7 @@ function provideHover(document, position, token) {
 		{ id: 'waterfall_c', name: 'Sound effect (Ambient)' },
 		// #endregion
 		// #region Component values
-		{ id: '.absoluteX', name: '```stonescript\ncomponent.absoluteX\n```\n---\n * The component\'s position relative to the screen' },
+		{ id: '.absoluteX', name: '```stonescript\n\n```\n---\n * The component\'s position relative to the screen' },
 		{ id: '.absoluteY', name: '```stonescript\ncomponent.absoluteY\n```\n---\n * The component\'s position relative to the screen' },
 		{ id: '.anchor', name: '```stonescript\ncomponent.anchor\n```\n---\n * Auto-layout property representing the internal pivot of the component. This guides the UI system on how to position the component relative to itself. Default value is "center_center". Possible values: top_left, top_center, top_right, center_left, center_center, center_right, bottom_left, bottom_center and bottom_right' },
 		{ id: '.dock', name: '```stonescript\ncomponent.dock\n```\n---\n * Auto-layout property similar to anchor. However, dock represents the external pivot, or position inside the parent where to position the component. If in doubt, use the same value for both anchor and dock, which is the most common situation' },
