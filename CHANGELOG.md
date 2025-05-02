@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.16 (2 May 2025)
+* `BigNumber.ToInt()`, `BigNumber.ToFloat()`
+* `glitch` item type
+* `buffs.GetCount()`, `debuffs.GetCount()`
+* `foe.buffs.GetCount()`, `foe.debuffs.GetCount()`
+* `buffs.GetTime()`, `debuffs.GetTime()`
+* `foe.buffs.GetTime()` and `foe.debuffs.GetTime()`
+
 ## 1.0.15 (10 July 2024)
 * `event.GetObjectiveId()`, `event.GetObjectiveProgress()` and `event.GetObjectiveGoal()`
 * `encounter.isElite`, `encounter.eliteMod`

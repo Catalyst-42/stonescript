@@ -249,11 +249,19 @@ function provideCompletionItems(document, position, token, context) {
 	}
 
 	if (/(\bbuffs\.$|\bbuffs\.\w+$)/g.test(lineText)) {
-		dependencies = ['count', 'string', 'oldest']
+		dependencies = [
+			'count',
+			'string',
+			'oldest'
+		]
 	}
 
 	if (/(\bdebuffs\.$|\bdebuffs\.\w+$)/g.test(lineText)) {
-		dependencies = ['count', 'string', 'oldest']
+		dependencies = [
+			'count',
+			'string',
+			'oldest'
+		]
 	}
 
 	if (/buffs.string *(=|!) *(\w+)?$/g.test(lineText)) {
@@ -342,7 +350,8 @@ function provideCompletionItems(document, position, token, context) {
 			'star',
 			'sight',
 			'shiny',
-			'gold'
+			'gold',
+			'glitch',
 		]
 	}
 
@@ -1390,6 +1399,8 @@ function provideCompletionItems(document, position, token, context) {
 						{ name: 'Lt()', snippet: 'Lt($0)', type: vscode.CompletionItemKind.Function },
 						{ name: 'Le()', snippet: 'Le($0)', type: vscode.CompletionItemKind.Function },
 						{ name: 'ToString()', snippet: 'ToString($0)', type: vscode.CompletionItemKind.Function },
+						{ name: 'ToInt()', snippet: 'ToInt($0)', type: vscode.CompletionItemKind.Function },
+						{ name: 'ToFloat()', snippet: 'ToFloat($0)', type: vscode.CompletionItemKind.Function },
 						{ name: 'ToUI()', snippet: 'ToUI($0)', type: vscode.CompletionItemKind.Function },
 						)
 				}

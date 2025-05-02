@@ -1085,6 +1085,8 @@ function provideHover(document, position, token) {
 		{ id: '.Lt', name: '```stonescript\nBigNumber.Lt(num / BigNumber)\n```\n---\n * Determines if a BigNumber is less than a number (<)' },
 		{ id: '.Le', name: '```stonescript\nBigNumber.Le(num / BigNumber)\n```\n---\n * Determines if a BigNumber is less than or equal to a number (<=)' },
 		{ id: '.ToString', name: '```stonescript\nBigNumber.ToString()\n```\n---\n * Returns a string representation of the BigNumber. Can be used to serialize it for storage.' },
+		{ id: '.ToInt', name: '```stonescript\nBigNumber.ToInt()\n```\n---\n * Converts a big number to integer value. Throws error if the number is too large or too small.' },
+		{ id: '.ToFloat', name: '```stonescript\nBigNumber.ToFloat()\n```\n---\n * Converts a big number to float value. Throws error if the number is too large or too small.' },
 		{ id: '.ToUI', name: '```stonescript\nBigNumber.ToUI()\n```\n---\n * Returns a shortened string representation of the number for use in user interfaces.' },
 		// #endregion
 		// #region Text values
