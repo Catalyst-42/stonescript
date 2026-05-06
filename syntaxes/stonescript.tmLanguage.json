@@ -135,7 +135,7 @@
           "name": "keyword.operator.location.stonescript"
         },
         {
-          "match": "\\b(buff_protection|protection|stun|debuff_dot|dot|debuff_dot_2|debuff_damage|damage|debuff_chill|chill|bardiche|smite|berserk|lucky_crit|crit|lucky_mult|multi|strength|invisibility|vampiric|experience)\\b",
+          "match": "\\b(berserk|experience|invisibility|lucky_crit|lucky_mult|strength|vampiric|bardiche_buff_aoe_chance|bardiche_buff_crit_chance|bardiche_buff_crit_mult|bardiche_buff_move_speed|bardiche_buff_move_speed|shovel_damage|bardiche_buff_move_speed|quarterstaff_buff_attack_speed|quarterstaff_buff_stun|pick_pocket|bardiche_buff_aoe_chance|smite|buff_staff_berserk|buff_staff_protection|buff_range|buff_bullet_width|buff_infernal|buff_inf_speed|buff_frozen|buff_damage|debuff_dot|debuff_attack_speed|debuff_yeti_chill|debuff_chill|debuff_move_speed|puff_debuff_damage|pallas_phase2_debuff|stun|spider_debuff_damage|debuff_duration_damage|debuff_damage|dysangelos_debuff_damage|debuff_darkness_move_speed|debuff_darkness_range|debuff_darkness_accuracy|bardiche_buff_move_speed|quarterstaff_buff_attack_speed|debuff_weapon_swap_lock|spider_buff_damage|adaptive_defense_poison|adaptive_defense_vigor|adaptive_defense_aether|adaptive_defense_fire|adaptive_defense_ice|buff_protection|poena_mirror|poena_crit|poena_mult|stability|stoic|immortal|buff_tenacious|buff_rebirth|buff_mirror|debuff_frost_stun|debuff_armor_fatigue|debuff_dot|debuff_dot2|debuff_chill|debuff_feeble|ignition|stun|unstable|debuff_damage)\\b",
           "name": "keyword.operator.effect-filter.stonescript"
         },
         {

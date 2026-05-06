@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.17 (6 May 2026)
+* Updated list of buffs and debuffs strings, it's completion and coloring
+
 ## 1.0.16 (2 May 2025)
 * `BigNumber.ToInt()`, `BigNumber.ToFloat()`
 * `glitch` item type
