@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.18 (8 May 2026)
+* Remove duplicates in autocompletion suggestions
+
 ## 1.0.17 (6 May 2026)
 * Updated list of buffs and debuffs strings, it's completion and coloring
 
@@ -37,7 +40,7 @@
 ## 1.0.9 (26 October 2023)
 * BigNumber variable type and their function completion
 * added `time.msbn` and removed `time.ms`
-* fidex `math.pi` coloring
+* function `math.pi` coloring
 * added `math.e`, `math.Exp()` and `math.Atan()`
 * added Known issues in README
 * added herobrine
